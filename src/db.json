@@ -1,0 +1,61 @@
+{
+	"posts": [
+		{
+			"id": 1,
+			"title": "json-server",
+			"author": "typicode"
+		}
+	],
+	"comments": [
+		{
+			"id": 1,
+			"body": "some comment",
+			"postId": 1
+		}
+	],
+	"profile": {
+		"name": "typicode"
+	},
+	"users": [
+		{
+			"email": "steve.berenger@gmal.com",
+			"password": "$2a$10$Lv/u0gypzE1049LxmSUQIe8KyE2HwU6dRsqP7aWcNxinKm0elcBNG",
+			"id": 1
+		},
+		{
+			"email": "steve.berengerr@gmal.com",
+			"password": "$2a$10$gYDodgg9c0VQcA.7IeEgJux5K8o7u10cWfh0CpN9TIPDFVaQN8LEW",
+			"id": 2
+		},
+		{
+			"email": "robert.redford@gmal.com",
+			"password": "$2a$10$LiK91xae5/C/tV.cso6JeudTo40eA9sg7zH8Gw/q6PwHiCiJJTen2",
+			"id": 3
+		},
+		{
+			"email": "mohamed@theboss.com",
+			"password": "$2a$10$MDrxrwhCxvvBEhB62GrkTeeBYWoiFxOgpzdu.6l0OXGxjSPSrXUC6",
+			"id": 4
+		},
+		{
+			"email": "steve.b@gmail.com",
+			"password": "$2a$10$y/j5CzaZa1MGUegDt4M5eeKMO5RJ1HgWBpJDY9u5LaAx9eOvGb7ui",
+			"id": 5
+		},
+		{
+			"email": "M.maho@gmail.com",
+			"password": "$2a$10$/6HBABhkGhgc7f57sQCHmuQchTDQvK6RHGyBRZKAGQn.WfJHsJaQW",
+			"id": 6
+		},
+		{
+			"email": "glecia@miaou.com",
+			"password": "$2a$10$R0abB6C.7qVBWvpEDyfAZu7WHH2b2eI44BOzLPU9WA8Zm22MPcg5K",
+			"id": 7
+		},
+		{
+			"email": "jeje@lataupe.fr",
+			"password": "$2a$10$Kzz4FmPq8X.OepoH4h6X5eqzNbfXS4/IL/xq/f9Xy23luz5e5GHba",
+			"id": 8
+		}
+	]
+}

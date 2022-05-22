@@ -1,0 +1,38 @@
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { PageSignUpComponent } from './pages/page-sign-up/page-sign-up.component';
+import { PageSignInComponent } from './pages/page-sign-in/page-sign-in.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PageTableAdminComponent } from './pages/page-table-admin/page-table-admin.component';
+import { PageAccueilComponent } from './pages/page-accueil/page-accueil.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    NavBarComponent,
+    SearchBarComponent,
+    PageSignUpComponent,
+    PageSignInComponent,
+    PageTableAdminComponent,
+    PageAccueilComponent,
+    
+    
+     
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule,
+  
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
