@@ -42,12 +42,12 @@ export class PageSignInComponent implements OnInit {
     requeteObservable.subscribe({
       // method a appeler en cas de succès 
       next: (resp: any) => {
-        console.log(resp.accessToken);
+        console.log(resp.token);
 
         this.router.navigateByUrl('/');
         // TODO stockage de mon token 
         // Localstorage
-        localStorage.setItem("token", resp.accessToken);
+        localStorage.setItem("token", resp.token);
         this.authService.messager.next(true);
 
         
@@ -70,7 +70,7 @@ export class PageSignInComponent implements OnInit {
 
     // rediriger mon user après sa connexion 
     
-    // !!!resp.accessToken pas possible car pas accessible en dehors du bloc subscribe
+    // !!!resp.token pas possible car pas accessible en dehors du bloc subscribe
    }
 
    stockageToken(tokenParam: string) {

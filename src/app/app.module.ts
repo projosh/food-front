@@ -8,7 +8,6 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { PageSignUpComponent } from './pages/page-sign-up/page-sign-up.component';
 import { PageSignInComponent } from './pages/page-sign-in/page-sign-in.component';
 import { HttpClientModule } from '@angular/common/http';
-import { PageTableAdminComponent } from './pages/page-table-admin/page-table-admin.component';
 import { PageAccueilComponent } from './pages/page-accueil/page-accueil.component';
 
 @NgModule({
@@ -18,7 +17,7 @@ import { PageAccueilComponent } from './pages/page-accueil/page-accueil.componen
     SearchBarComponent,
     PageSignUpComponent,
     PageSignInComponent,
-    PageTableAdminComponent,
+ 
     PageAccueilComponent,
     
     
