@@ -1,0 +1,36 @@
+<h1>Creation produit</h1>
+<form class="mt-5 col-md-6 m-auto" [formGroup]="newProductForm" (ngSubmit)="onSubmitForm()">
+    <div class="mb-3">
+        <label for="barcode" class="form-label">code barre</label>
+        <div class="input-group">
+            <input placeholder="entrer le code barre de votre produit" formControlName="name" type="text"
+                class="form-control" aria-describedby="userHelp" id="barcode">
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="designation" class="form-label">designation</label>
+        <div class="input-group">
+            <input placeholder="entrer la designation de votre produit" formControlName="capital" type="text"
+                class="form-control" aria-describedby="userHelp" id="designation">
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="lactose" class="form-label">Lactose</label>
+        div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+        <label class="form-check-label" for="flexRadioDefault1">
+            Default radio
+        </label>
+    </div>
+    <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+        <label class="form-check-label" for="flexRadioDefault2">
+            Default checked radio
+        </label>
+    </div>
+
+
+    <div class="d-grid col-12 col-md-2 ms-auto">
+        <button [disabled]="newProductForm.invalid" type="submit" class="btn btn-primary text-nowrap">Creation</button>
+    </div>
+</form>

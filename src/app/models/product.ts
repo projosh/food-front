@@ -1,14 +1,14 @@
 export class Product {
 
      id?: string;
-    name: string;
-    picture: string;
+    barcode: string;
+    designation: string;
     gluten: boolean;
     lactose: boolean;
 
-    constructor(paramName: string, paramPicture: string, paramGluten: boolean, paramLactose: boolean) {
-        this.name = paramName;
-        this.picture = paramPicture;
+    constructor(paramBarcode: string, paramDesignation: string, paramGluten: boolean, paramLactose: boolean) {
+        this.barcode = paramBarcode;
+        this.designation = paramDesignation;
         this.gluten = paramGluten;
         this.lactose = paramLactose;
     }
