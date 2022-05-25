@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { PageAccueilComponent } from './pages/page-accueil/page-accueil.component';
 import { PageAccueilVisiteurComponent } from './pages/page-accueil-visiteur/page-accueil-visiteur.component';
 import { PageNewProductComponent } from './pages/page-new-product/page-new-product.component';
+import { PageMyProductsComponent } from './pages/page-my-products/page-my-products.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,8 @@ import { PageNewProductComponent } from './pages/page-new-product/page-new-produ
     PageAccueilComponent,
     PageAccueilVisiteurComponent,
     PageNewProductComponent,
+    PageMyProductsComponent,
+    
     
     
      
