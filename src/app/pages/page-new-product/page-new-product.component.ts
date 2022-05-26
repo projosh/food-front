@@ -22,9 +22,9 @@ export class PageNewProductComponent implements OnInit {
   ngOnInit(): void {
     this.newProductForm = this.fb.group({
       barcode: ['', Validators.required],
-      designation: [ , Validators.required],
-      lactose: [ , Validators.required],
-      gluten: ['', Validators.required]
+      designation: ['' , Validators.required],
+      lactose: [ true , Validators.required],
+      gluten: [false, Validators.required]
     })
   }
 

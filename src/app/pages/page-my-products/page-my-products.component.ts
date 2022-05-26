@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Product } from 'src/app/models/product';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-page-my-products',
@@ -7,9 +9,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageMyProductsComponent implements OnInit {
 
-  constructor() { }
+  public listProducts!: Product[];
+
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
+    this.productService.getAllProducts().subscribe((resp) => {
+      console.log(resp);
+      this.listProducts = resp;
+    })
+  }
+
+  onClickDeleteProduct(productId: string | undefined){
+    console.log(productId);
+    if(productId) {
+      this.productService.deleteProduct(productId).subscribe({
+        next : (resp) => {
+          console.log(resp);
+          // Todo 
+         
+
+
+          // Version compacte
+          this.listProducts = this.listProducts.filter(product => product.id ! ==  productId);
+          
+         
+
+          
+
+        },
+        error: (err) => { console.error(err)}
+      })
+    }
   }
 
 }
