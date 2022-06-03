@@ -20,21 +20,13 @@
     <div class="mb-3">
         <input type="checkbox" formControlName="gluten" id="lactose">Gluten
     </div>
-    <div class="mb-3">
+    <!-- <div class="mb-3">
         <label for="photolink" class="form-label">photo</label>
         <div class="input-group">
-            <input type="file" class="form-control" aria-describedby="userHelp" id="photolink">
+            <input type="image"class="form-control" aria-describedby="userHelp" id="photolink">
         </div>
+    </div> -->
+    <div class="d-grid col-12 col-md-2 ms-auto">
+        <button [disabled]="newProductForm.invalid" type="submit" class="btn btn-primary text-nowrap">Creation</button>
     </div>
-
-
 </form>
-
-
-
-
-
-
-<div class="d-grid col-12 col-md-2 ms-auto">
-    <button [disabled]="newProductForm.invalid" type="submit" class="btn btn-primary text-nowrap">Creation</button>
-</div>

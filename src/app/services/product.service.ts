@@ -1,7 +1,7 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { Product } from '../models/product';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +17,7 @@ export class ProductService {
     const token = localStorage.getItem("token");
 
     return this.http.post(
-      `${this.urlApi}/products/create`,
+      `${this.urlApi}/products`,
       newProduct,
       { headers: { Authorization: `Bearer ${token}` } }
     )
@@ -26,7 +26,7 @@ export class ProductService {
   getAllProducts(): Observable<Product[]> {
     const token = localStorage.getItem("token");
 
-    return this.http.get<Product[]>(`${this.urlApi}/product/personnal`,
+    return this.http.get<Product[]>(`${this.urlApi}/products/my-products`,
       { headers: { Authorization: `Bearer ${token}` } }
     )
   }
@@ -34,7 +34,7 @@ export class ProductService {
   getProductById(productId: string): Observable<Product> {
     const token = localStorage.getItem("token");
     
-    return this.http.get<Product>(`${this.urlApi}/product${productId}`,
+    return this.http.get<Product>(`${this.urlApi}/my-product/${productId}`,
       { headers: { Authorization: `Bearer ${token}` } }
     )
   }
@@ -50,7 +50,7 @@ const body = {
       
 }
     
-        return this.http.put<any>(`${this.urlApi}/product${product.id}`,
+        return this.http.put<any>(`${this.urlApi}/my-products${product.id}`,
       body, 
       {headers : { Authorization : `Bearer ${token}`}}
     )
@@ -59,7 +59,7 @@ const body = {
       deleteProduct(productId: string) {
     const token = localStorage.getItem("token");
 
-    return this.http.delete(`${this.urlApi}/product${productId}`, 
+    return this.http.delete(`${this.urlApi}/product/${productId}`, 
       { headers: { Authorization : `Bearer ${token}`}})
   }
    

@@ -3,17 +3,15 @@
 <table class="table">
     <thead>
         <tr>
-            <th>code barre</th>
+            <th>Code barre</th>
             <th>Désignation</th>
             <th>Gluten</th>
             <th>Lactose</th>
-            <th>photo</th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let product of listProducts">
-            <td>{{ product.barcode }}</td> <!--  code barre -->
+            <td>{{ product.barcode}}</td> <!--  code barre -->
             <td>{{ product.designation }}</td> <!--  Nom du produit -->
             <td>{{ product.gluten}}</td> <!--  true or false -->
             <td>{{ product.lactose }}</td> <!--  true or false -->

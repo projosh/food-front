@@ -23,8 +23,8 @@ export class PageNewProductComponent implements OnInit {
     this.newProductForm = this.fb.group({
       barcode: ['', Validators.required],
       designation: ['' , Validators.required],
-      lactose: [ true , Validators.required],
-      gluten: [false, Validators.required]
+      lactose: [false],// mettre par defaut 
+      gluten: [false]
     })
   }
 
@@ -40,9 +40,10 @@ export class PageNewProductComponent implements OnInit {
 
     this.ProductService.createNewProduct(newProduct).subscribe(() => {
       console.log("Le produit a été créé !!!");
-      this.router.navigateByUrl('/my-Products');
+      this.router.navigateByUrl('/my-products');
     });
 
+    
     //fetch(url)
   }
 
