@@ -1,0 +1,28 @@
+<h1>Modifier un produits</h1>
+<form *ngIf="updateProductForm" class="mt-5 col-md-6 m-auto" [formGroup]="updateProductForm"
+    (ngSubmit)="onSubmitForm()">
+    <div class="mb-3">
+        <label for="barcode" class="form-label">Bardoce</label>
+        <div class="input-group">
+            <input placeholder="entrer le code barre " formControlName="name" type="text" class="form-control"
+                aria-describedby="userHelp" id="barcode">
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="designation" class="form-label">designation</label>
+        <div class="input-group">
+            <input placeholder="entrer la designation de votre produit" formControlName="designation" type="text"
+                class="form-control" aria-describedby="userHelp" id="designation">
+        </div>
+    </div>
+    <div class="mb-3">
+        <input type="checkbox" formControlName="lactose" id="lactose">Lactose
+    </div>
+    <div class="mb-3">
+        <input type="checkbox" formControlName="gluten" id="gluten">Gluten
+    </div>
+
+    <div class="d-grid col-12 col-md-2 ms-auto">
+        <button [disabled]="updateProductForm.invalid" type="submit" class="btn btn-primary text-nowrap">Update</button>
+    </div>
+</form>

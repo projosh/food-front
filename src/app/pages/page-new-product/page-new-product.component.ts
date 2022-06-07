@@ -40,7 +40,7 @@ export class PageNewProductComponent implements OnInit {
 
     this.ProductService.createNewProduct(newProduct).subscribe(() => {
       console.log("Le produit a été créé !!!");
-      this.router.navigateByUrl('/my-products');
+      this.router.navigateByUrl('/products');
     });
 
     

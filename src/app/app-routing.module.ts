@@ -6,10 +6,12 @@ import { PageMyProductsComponent } from './pages/page-my-products/page-my-produc
 import { PageNewProductComponent } from './pages/page-new-product/page-new-product.component';
 import { PageSignInComponent } from './pages/page-sign-in/page-sign-in.component';
 import { PageSignUpComponent } from './pages/page-sign-up/page-sign-up.component';
+import { PageUpdateProductComponent } from './pages/page-update-product/page-update-product.component';
 
 const routes: Routes = [
   
   { path: '', component: PageAccueilComponent },
+  {path:'update-product/:product-id', canActivate:[AuthGuard],component:PageUpdateProductComponent},
   {path: 'my-products', canActivate:[AuthGuard], component: PageMyProductsComponent},
   { path: 'new-product', component: PageNewProductComponent },
   { path: 'sign-up', component: PageSignUpComponent },
