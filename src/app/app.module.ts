@@ -22,11 +22,7 @@ import { PageUpdateProductComponent } from './pages/page-update-product/page-upd
     PageNewProductComponent,
     PageMyProductsComponent,
     PageUpdateProductComponent,
-  
-    
-    
-    
-     
+   
   ],
   imports: [
     BrowserModule,

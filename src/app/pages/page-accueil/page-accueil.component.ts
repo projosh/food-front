@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageAccueilComponent implements OnInit {
   
-  public listNameProducts!: any[];
+  public products!: any[];
 
   constructor() { }
 
@@ -20,7 +20,7 @@ export class PageAccueilComponent implements OnInit {
     //}) // est equivalente (à peu près) à la ligne du dessus 
     .then((response) => {
       console.log(response);
-      this.listNameProducts = response;
+      this.products = response;
     });
 
     // A ne jamais mettre dans ses classes c'est simplement pour donner un exemple

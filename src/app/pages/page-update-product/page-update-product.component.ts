@@ -14,20 +14,20 @@ updateProductForm! : FormGroup;
   constructor(
     private activateRoute: ActivatedRoute,
     private productService: ProductService,
-    private fb: FormBuilder,
+    private fb: FormBuilder ,
     private router: Router) { }
 
   ngOnInit(): void {
 
     this.activateRoute.params.subscribe((param) => {
-
+ // 
       console.log(param);
-      this.productService.getProductById(param['id-product'].subscribe((product: Product) => {
+      this.productService.getProductById(param['id-product']).subscribe((product: Product) => {
 
-        console.log(product);
+         console.log(product);
         this.updateProductForm = this.fb.group({
 
-          barcode: [product.barcode, Validators.required],
+          barCode: [product.barCode, Validators.required],
           designation: [product.designation, Validators.required],
           lactose: [product.lactose],
           gluten: [product.gluten],
@@ -35,7 +35,7 @@ updateProductForm! : FormGroup;
 
         })
 
-      }))
+      })
         
     })
 
@@ -45,7 +45,7 @@ updateProductForm! : FormGroup;
     const productToUpdate = this.updateProductForm.value;
 
     this.productService.updateProduct(productToUpdate).subscribe((resp) => {
-      //alert(resp.message);
+      alert(resp.message);
       // TODO Rediriger le user vers la page "/my-products"
       this.router.navigateByUrl('/my-products');
     })

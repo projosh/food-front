@@ -2,9 +2,9 @@
 <form *ngIf="updateProductForm" class="mt-5 col-md-6 m-auto" [formGroup]="updateProductForm"
     (ngSubmit)="onSubmitForm()">
     <div class="mb-3">
-        <label for="barcode" class="form-label">Bardoce</label>
+        <label for="barcode" class="form-label">barcode</label>
         <div class="input-group">
-            <input placeholder="entrer le code barre " formControlName="name" type="text" class="form-control"
+            <input placeholder="entrer le code barre " formControlName="barCode" type="text" class="form-control"
                 aria-describedby="userHelp" id="barcode">
         </div>
     </div>
@@ -23,6 +23,7 @@
     </div>
 
     <div class="d-grid col-12 col-md-2 ms-auto">
-        <button [disabled]="updateProductForm.invalid" type="submit" class="btn btn-primary text-nowrap">Update</button>
+        <button [disabled]="updateProductForm.invalid" type="submit"
+            class="btn btn-primary text-nowrap">Modifier</button>
     </div>
 </form>

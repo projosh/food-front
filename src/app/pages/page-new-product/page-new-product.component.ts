@@ -16,7 +16,7 @@ export class PageNewProductComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder, 
-   private ProductService : ProductService,
+    private ProductService : ProductService,
     private router: Router) { }
 
   ngOnInit(): void {
@@ -31,10 +31,12 @@ export class PageNewProductComponent implements OnInit {
   onSubmitForm() {
     console.log(this.newProductForm.value);
     const newProduct = new Product(
+      this.newProductForm.value.id,
       this.newProductForm.value.barcode,
       this.newProductForm.value.designation,
       this.newProductForm.value.lactose,
       this.newProductForm.value.gluten
+     
     );
     console.log(newProduct);
 

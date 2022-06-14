@@ -11,9 +11,9 @@ import { PageUpdateProductComponent } from './pages/page-update-product/page-upd
 const routes: Routes = [
   
   { path: '', component: PageAccueilComponent },
-  {path:'update-product/:product-id', canActivate:[AuthGuard],component:PageUpdateProductComponent},
   {path: 'my-products', canActivate:[AuthGuard], component: PageMyProductsComponent},
-  { path: 'new-product', component: PageNewProductComponent },
+  { path: 'new-product', canActivate:[AuthGuard], component: PageNewProductComponent },
+  {path:'update-product/:id-product', canActivate:[AuthGuard],component:PageUpdateProductComponent},
   { path: 'sign-up', component: PageSignUpComponent },
   { path: 'sign-in', component: PageSignInComponent }
   

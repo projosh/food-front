@@ -11,10 +11,11 @@
     </thead>
     <tbody>
         <tr *ngFor="let product of listProducts">
-            <td>{{ product.barcode}}</td> <!--  code barre -->
+            <td>{{product.barCode}}</td> <!--  code barre -->
             <td>{{ product.designation }}</td> <!--  Nom du produit -->
             <td>{{ product.gluten}}</td> <!--  true or false -->
             <td>{{ product.lactose }}</td> <!--  true or false -->
+            <th></th>
             <td>
                 <button class="btn btn-warning" routerLink="/update-product/{{product.id}}">Modifier</button>
             </td>
