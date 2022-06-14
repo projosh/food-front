@@ -9,6 +9,7 @@ export class PageAccueilComponent implements OnInit {
   
   public products!: any[];
 
+ 
   constructor() { }
 
   ngOnInit(): void {
@@ -22,6 +23,12 @@ export class PageAccueilComponent implements OnInit {
       console.log(response);
       this.products = response;
     });
+
+    this.ngOnInit
+
+   
+  
+  
 
     // A ne jamais mettre dans ses classes c'est simplement pour donner un exemple
     // function name() {

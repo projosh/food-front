@@ -12,6 +12,8 @@ import { PageNewProductComponent } from './pages/page-new-product/page-new-produ
 import { PageMyProductsComponent } from './pages/page-my-products/page-my-products.component';
 import { PageUpdateProductComponent } from './pages/page-update-product/page-update-product.component';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,

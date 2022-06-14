@@ -24,16 +24,8 @@ export class ProductService {
       { headers: { Authorization: `Bearer ${token}` } }
     )
   }
-// page accueil client
-  getAllProducts(): Observable<Product[]> {
-    const token = localStorage.getItem("token");
 
-    return this.http.get<Product[]>(`${this.urlApi}/products/details`,
-      { headers: { Authorization: `Bearer ${token}` } }
-    )
-  }
-  // page admin accueil
-  getAllAdminProducts(): Observable<Product[]> {
+  getAllProducts(): Observable<Product[]> {
     const token = localStorage.getItem("token");
 
     return this.http.get<Product[]>(`${this.urlApi}/products/admin-details`,
@@ -57,7 +49,6 @@ const body = {
       designation: product.designation,
       lactose: product.lactose,
       gluten: product.gluten,
-      
      
       
 }
