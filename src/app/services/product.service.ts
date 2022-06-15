@@ -77,6 +77,8 @@ const body = {
     )
   }
 
+
+
       deleteProduct(productId: string) {
     const token = localStorage.getItem("token");
 

@@ -11,6 +11,7 @@ import { PageAccueilComponent } from './pages/page-accueil/page-accueil.componen
 import { PageNewProductComponent } from './pages/page-new-product/page-new-product.component';
 import { PageMyProductsComponent } from './pages/page-my-products/page-my-products.component';
 import { PageUpdateProductComponent } from './pages/page-update-product/page-update-product.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 
 
@@ -24,6 +25,7 @@ import { PageUpdateProductComponent } from './pages/page-update-product/page-upd
     PageNewProductComponent,
     PageMyProductsComponent,
     PageUpdateProductComponent,
+    PageNotFoundComponent,
    
   ],
   imports: [
