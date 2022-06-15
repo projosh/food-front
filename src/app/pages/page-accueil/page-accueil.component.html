@@ -25,14 +25,20 @@
             <!-- <td>{{ prod
                 uct.gluten}}</td>  true or false -->
 
+
             <td>
                 <i *ngIf="product.gluten" class="bi bi-check-circle-fill"></i>
                 <i *ngIf="!product.gluten" class="bi bi-x-circle-fill"></i>
             </td>
             <!-- <td>{{ product.lactose }}</td>  true or false -->
-            <i *ngIf="product.lactose" class="bi bi-check-circle-fill"></i>
-            <i *ngIf="!product.lactose" class="bi bi-x-circle-fill"></i>
-            <td>{{product.photoLink}}</td>
+            <td><i *ngIf="product.lactose" class="bi bi-check-circle-fill"></i>
+                <i *ngIf="!product.lactose" class="bi bi-x-circle-fill"></i>
+            </td>
+            <td>
+                <img *ngIf="product.photoLink" width="50" class="img-fluid" src="{{product.photoLink}}" alt="">
+                <i *ngIf="!product.photoLink" class="bi-image" style="font-size: 2rem"></i>
+            </td>
+
         </tr>
     </tbody>
 </table>

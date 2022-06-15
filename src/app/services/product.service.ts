@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Product } from '../models/product';
 import { Observable } from 'rxjs';
+import { Category } from '../models/category';
+import { Brand } from '../models/brand';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +31,22 @@ export class ProductService {
     const token = localStorage.getItem("token");
 
     return this.http.get<Product[]>(`${this.urlApi}/products/admin-details`,
+      { headers: { Authorization: `Bearer ${token}` } }
+    )
+  }
+
+   getAllCategories(): Observable<Category[]> {
+    const token = localStorage.getItem("token");
+
+    return this.http.get<Category[]>(`${this.urlApi}/categories/names`,
+      { headers: { Authorization: `Bearer ${token}` } }
+    )
+  }
+
+     getAllBrands(): Observable<Brand[]> {
+    const token = localStorage.getItem("token");
+
+    return this.http.get<Brand[]>(`${this.urlApi}/brands/names`,
       { headers: { Authorization: `Bearer ${token}` } }
     )
   }
@@ -67,5 +85,7 @@ const body = {
   }
    
   }
+
+  
     
   

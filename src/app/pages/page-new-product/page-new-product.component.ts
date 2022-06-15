@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Brand } from 'src/app/models/brand';
+import { Category } from 'src/app/models/category';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -11,7 +13,8 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class PageNewProductComponent implements OnInit {
 
-
+  listCategories!: Category[];
+  listBrands!: Brand[];
   newProductForm!: FormGroup;
 
   constructor(
@@ -20,11 +23,25 @@ export class PageNewProductComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
+
+    // appel api pour récupérer list category
+    this.ProductService.getAllCategories().subscribe((respCategories: Category[]) => {
+      this.listCategories = respCategories;
+
+      this.ProductService.getAllBrands().subscribe((respBrands: Brand[]) => {
+        this.listBrands = respBrands;
+      })
+      
+    })
+    // appel api pour récupérer list brand
+
     this.newProductForm = this.fb.group({
-      barcode: ['', Validators.required],
+      barCode: ['', Validators.required],
       designation: ['' , Validators.required],
       lactose: [false],// mettre par defaut 
-      gluten: [false]
+      gluten: [false],
+      categoryId: [1],
+      brandId: [1]
     })
   }
 
@@ -32,17 +49,18 @@ export class PageNewProductComponent implements OnInit {
     console.log(this.newProductForm.value);
     const newProduct = new Product(
       this.newProductForm.value.id,
-      this.newProductForm.value.barcode,
+      this.newProductForm.value.barCode,
       this.newProductForm.value.designation,
       this.newProductForm.value.lactose,
-      this.newProductForm.value.gluten
-     
+      this.newProductForm.value.gluten,
+      this.newProductForm.value.categoryId,
+      this.newProductForm.value.brandId
     );
     console.log(newProduct);
 
     this.ProductService.createNewProduct(newProduct).subscribe(() => {
       console.log("Le produit a été créé !!!");
-      this.router.navigateByUrl('/products');
+      this.router.navigateByUrl('/');
     });
 
     
