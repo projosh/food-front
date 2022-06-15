@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Brand } from 'src/app/models/brand';
+import { Category } from 'src/app/models/category';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -10,7 +12,12 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./page-update-product.component.css']
 })
 export class PageUpdateProductComponent implements OnInit {
-updateProductForm! : FormGroup;
+
+  
+  listCategories!: Category[];
+  listBrands!: Brand[];
+  updateProductForm!: FormGroup;
+  
   constructor(
     private activateRoute: ActivatedRoute,
     private productService: ProductService,
@@ -19,6 +26,14 @@ updateProductForm! : FormGroup;
 
   ngOnInit(): void {
 
+    this.productService.getAllCategories().subscribe((respCategories: Category[]) => {
+      this.listCategories = respCategories;
+    })
+
+     this.productService.getAllBrands().subscribe((respBrands: Brand[]) => {
+      this.listBrands = respBrands;
+    })
+
     this.activateRoute.params.subscribe((param) => {
  // 
       console.log(param);
@@ -26,12 +41,12 @@ updateProductForm! : FormGroup;
 
          console.log(product);
         this.updateProductForm = this.fb.group({
-
-          barCode: [product.barCode, Validators.required],
-          designation: [product.designation, Validators.required],
-          lactose: [product.lactose],
-          gluten: [product.gluten],
-          id: [product.id]
+            barCode: [product.barCode,Validators.required],
+            designation: [product.designation,Validators.required],
+            lactose: [false],// mettre par defaut 
+            gluten: [false],
+            categoryId: [1],
+            brandId: [1]
 
         })
 

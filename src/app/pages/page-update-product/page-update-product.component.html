@@ -22,6 +22,18 @@
         <input type="checkbox" formControlName="gluten" id="gluten">Gluten
     </div>
 
+    <div class="mb-3">
+        <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="categoryId">
+            <option selected *ngFor="let category of listCategories" [value]="category.id">{{category.name}}</option>
+        </select>
+    </div>
+
+    <div class="mb-3">
+        <select class="form-select form-select-sm" aria-label=".form-select-sm example" formControlName="categoryId">
+            <option selected *ngFor="let brand of listBrands" [value]="brand.id">{{brand.name}}</option>
+        </select>
+    </div>
+
     <div class="d-grid col-12 col-md-2 ms-auto">
         <button [disabled]="updateProductForm.invalid" type="submit"
             class="btn btn-primary text-nowrap">Modifier</button>
