@@ -24,7 +24,6 @@ export class PageNewProductComponent implements OnInit {
 
   ngOnInit(): void {
 
-    // appel api pour récupérer list category
     this.ProductService.getAllCategories().subscribe((respCategories: Category[]) => {
       this.listCategories = respCategories;
 
@@ -33,8 +32,7 @@ export class PageNewProductComponent implements OnInit {
       })
       
     })
-    // appel api pour récupérer list brand
-
+    
     this.newProductForm = this.fb.group({
       barCode: ['', Validators.required],
       designation: ['' , Validators.required],
@@ -64,7 +62,7 @@ export class PageNewProductComponent implements OnInit {
     });
 
     
-    //fetch(url)
+   
   }
 
 }

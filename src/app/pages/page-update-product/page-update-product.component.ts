@@ -61,7 +61,7 @@ export class PageUpdateProductComponent implements OnInit {
 
     this.productService.updateProduct(productToUpdate).subscribe((resp) => {
       alert(resp.message);
-      // TODO Rediriger le user vers la page "/my-products"
+      
       this.router.navigateByUrl('/my-products');
     })
   }

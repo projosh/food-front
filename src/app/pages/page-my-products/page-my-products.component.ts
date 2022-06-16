@@ -26,16 +26,8 @@ export class PageMyProductsComponent implements OnInit {
       this.productService.deleteProduct(productId).subscribe({
         next : (resp) => {
           console.log(resp);
-          // Todo 
-         
 
-
-          // Version compacte
           this.listProducts = this.listProducts.filter(product => product.id ! ==  productId);
-          
-         
-
-          
 
         },
         error: (err) => { console.error(err)}

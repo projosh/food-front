@@ -8,7 +8,6 @@ import { Component, OnInit } from '@angular/core';
 export class PageAccueilComponent implements OnInit {
   
   public products!: any[];
-
  
   constructor() { }
 
@@ -16,28 +15,13 @@ export class PageAccueilComponent implements OnInit {
 
     fetch("http://localhost:8080/products/details")
     .then((datas) => datas.json())
-    //.then(function(datas){
-    //  return datas.json()
-    //}) // est equivalente (à peu près) à la ligne du dessus 
+
     .then((response) => {
       console.log(response);
       this.products = response;
     });
 
     this.ngOnInit
-
-   
-  
-  
-
-    // A ne jamais mettre dans ses classes c'est simplement pour donner un exemple
-    // function name() {
-    //   return "Jérémy"
-    // } 
-
-    // const name = () => {
-    //   return "Jérémy"
-    // } 
 
   }
 

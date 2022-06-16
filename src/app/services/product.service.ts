@@ -11,8 +11,6 @@ import { Brand } from '../models/brand';
 export class ProductService {
   private urlApi: string;
 
- 
-
   constructor(private http: HttpClient) {
     this.urlApi = 'http://localhost:8080';
   }

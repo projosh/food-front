@@ -1,4 +1,4 @@
-<h1>Liste de mes produits</h1>
+<h1>Editer mes produits</h1>
 
 <table class="table">
     <thead>
@@ -11,10 +11,10 @@
     </thead>
     <tbody>
         <tr *ngFor="let product of listProducts">
-            <td>{{product.barCode}}</td> <!--  code barre -->
-            <td>{{ product.designation }}</td> <!--  Nom du produit -->
-            <td>{{ product.gluten}}</td> <!--  true or false -->
-            <td>{{ product.lactose }}</td> <!--  true or false -->
+            <td>{{product.barCode}}</td>
+            <td>{{ product.designation }}</td>
+            <td>{{ product.gluten}}</td>
+            <td>{{ product.lactose }}</td>
             <th></th>
             <td>
                 <button class="btn btn-warning" routerLink="/update-product/{{product.id}}">Modifier</button>

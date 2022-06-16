@@ -11,9 +11,7 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
 export class PageSignUpComponent implements OnInit {
   public signUpForm!: FormGroup;
   
-  // point d'exclamation sert à dire à notre code TS 
-  // que nous n'allons pas initialiser cette propriété 
-  // dans le constructor mais plus tard (ici dans le ngOnInit)
+ 
 
   constructor(private fb: FormBuilder, private authService: AuthenticationService) { }
 
@@ -27,25 +25,12 @@ export class PageSignUpComponent implements OnInit {
       validator: this.passwordMatchValidator
     }
     );
-    /*
-    signUpForm = {
-      userName: 'deuhzu',
-      password: 'ifrejfi',
-      confirmPassword: 'djiezidj'
-    }
-    */
+  
   }
 
   passwordMatchValidator(form: FormGroup) {
 
-    // if(form.get('password') !== null) {
-    //   if(form.get('password').value) {
 
-    //   }
-    // }
-    // => résumé en form.get('password')?.value
-    // Le point d'intérrogation permet de ne pas 
-    // accéder à la valeur de 'value' si le password est 'null' 
     if(form.get('password')?.value === form.get('confirmPassword')?.value) {
       return null;
     } else {
@@ -55,25 +40,18 @@ export class PageSignUpComponent implements OnInit {
 
   onSubmitForm() {
     console.log(this.signUpForm.value);
-    // {"userName": "", "password": "", "confirmPassword": ""};
+    
 
     const username = this.signUpForm.value.userName;
     const password = this.signUpForm.value.password;
     
-    // je transfère la valeur de mes champs userName et password
-    // dans 2 constances pour plus de facilité de manipulation
+  
 
 this.authService.registerUser(username, password).subscribe((reponseApi) => {
       console.log(reponseApi);
     })
 
-    /**
-     * fetch("http://url").then((resp) => {
-     *  return resp.json()
-     * }).then((reponseApi) => {
-     *  console.log(reponseApi);
-     * })
-     */
+  
   }
 
 }

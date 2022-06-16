@@ -1,10 +1,5 @@
 <h1>Découvrez nos produits !</h1>
 
-
-
-
-
-
 <table class="table">
     <thead>
         <tr>
@@ -17,17 +12,12 @@
     </thead>
     <tbody>
         <tr *ngFor="let product of products">
-            <td>{{product.barCode}}</td> <!--  code barre -->
-            <td>{{ product.designation }}</td> <!--  Nom du produit -->
-            <!-- <td>{{ prod
-                uct.gluten}}</td>  true or false -->
-
-
+            <td>{{product.barCode}}</td>
+            <td>{{ product.designation }}</td>
             <td>
                 <i *ngIf="product.gluten" class="bi bi-check-circle-fill"></i>
                 <i *ngIf="!product.gluten" class="bi bi-x-circle-fill"></i>
             </td>
-            <!-- <td>{{ product.lactose }}</td>  true or false -->
             <td><i *ngIf="product.lactose" class="bi bi-check-circle-fill"></i>
                 <i *ngIf="!product.lactose" class="bi bi-x-circle-fill"></i>
             </td>
@@ -35,7 +25,6 @@
                 <img *ngIf="product.photoLink" width="50" class="img-fluid" src="{{product.photoLink}}" alt="">
                 <i *ngIf="!product.photoLink" class="bi-image" style="font-size: 2rem"></i>
             </td>
-
         </tr>
     </tbody>
 </table>

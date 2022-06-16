@@ -38,9 +38,7 @@
     <div class="mb-3">
         <label for="confirm-password" class="form-label">Confirm password</label>
         <input formControlName="confirmPassword" type="password" id="confirm-password" class="form-control">
-        <!-- <div>
-            Mot de passe égaux error : {{signUpForm.getError('mismatch') | json}}
-        </div> -->
+
         <div class="form-text alert-danger"
             *ngIf="signUpForm.controls['confirmPassword'].dirty && signUpForm.getError('mismatch')">
             Les mots de passe doivent être similaires 😉
@@ -49,15 +47,5 @@
     <div class="d-grid col-12 col-md-2 ms-auto">
         <button [disabled]="signUpForm.invalid" type="submit" class="btn btn-primary text-nowrap">Inscription</button>
     </div>
-    <!-- <div>
-        Le formulaire est-il invalide ? : {{ signUpForm.invalid }}
-    </div> -->
+
 </form>
-<!--------------------------------------------
-  Le code ci-dessous permet simplement de 
-  visualiser les données du formulaire en live
-  c'est comme un console.log() dans le template
----------------------------------------------->
-<!-- <div>
-    {{ signUpForm.value | json}}
-</div> -->
